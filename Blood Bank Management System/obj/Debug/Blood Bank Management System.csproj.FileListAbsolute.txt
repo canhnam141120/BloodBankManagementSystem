@@ -1,0 +1,20 @@
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\bin\Debug\Blood Bank Management System.exe.config
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\bin\Debug\Blood Bank Management System.exe
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\bin\Debug\Blood Bank Management System.pdb
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood Bank Management System.csprojAssemblyReference.cache
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.BloodStock.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.BloodTransfert.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Dashboard.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Donor.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Login.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Mainform.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Patient.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.Properties.Resources.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.ViewDonor.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.ViewPatients.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood Bank Management System.csproj.GenerateResource.cache
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood Bank Management System.csproj.CoreCompileInputs.cache
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood Bank Management System.exe
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood Bank Management System.pdb
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.DonateBlood.resources
+E:\Documents\Kỳ 5_C#\Blood Bank Management System\Blood Bank Management System\obj\Debug\Blood_Bank_Management_System.AddUser.resources
