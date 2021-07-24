@@ -42,6 +42,8 @@ namespace Blood_Bank_Management_System
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.DNumTb = new System.Windows.Forms.TextBox();
+            this.tbVolume = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -77,9 +79,9 @@ namespace Blood_Bank_Management_System
             this.label12.ForeColor = System.Drawing.Color.DarkRed;
             this.label12.Location = new System.Drawing.Point(536, 59);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(145, 29);
+            this.label12.Size = new System.Drawing.Size(178, 29);
             this.label12.TabIndex = 22;
-            this.label12.Text = "Donors List";
+            this.label12.Text = "Donations List";
             // 
             // label11
             // 
@@ -97,11 +99,11 @@ namespace Blood_Bank_Management_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(371, 10);
+            this.label10.Location = new System.Drawing.Point(284, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 32);
+            this.label10.Size = new System.Drawing.Size(200, 32);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Donate";
+            this.label10.Text = "Donate Blood";
             // 
             // label1
             // 
@@ -180,11 +182,27 @@ namespace Blood_Bank_Management_System
             // 
             // DNumTb
             // 
-            this.DNumTb.Location = new System.Drawing.Point(44, 500);
+            this.DNumTb.Location = new System.Drawing.Point(37, 495);
             this.DNumTb.Name = "DNumTb";
             this.DNumTb.Size = new System.Drawing.Size(100, 22);
             this.DNumTb.TabIndex = 39;
             this.DNumTb.Visible = false;
+            // 
+            // tbVolume
+            // 
+            this.tbVolume.Location = new System.Drawing.Point(431, 572);
+            this.tbVolume.Name = "tbVolume";
+            this.tbVolume.Size = new System.Drawing.Size(100, 22);
+            this.tbVolume.TabIndex = 40;
+            this.tbVolume.Visible = false;
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(37, 547);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(100, 22);
+            this.tbID.TabIndex = 41;
+            this.tbID.Visible = false;
             // 
             // DonateBlood
             // 
@@ -192,6 +210,8 @@ namespace Blood_Bank_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(891, 606);
+            this.Controls.Add(this.tbID);
+            this.Controls.Add(this.tbVolume);
             this.Controls.Add(this.DNumTb);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -230,5 +250,7 @@ namespace Blood_Bank_Management_System
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox DNumTb;
+        private System.Windows.Forms.TextBox tbVolume;
+        private System.Windows.Forms.TextBox tbID;
     }
 }

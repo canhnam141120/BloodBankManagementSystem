@@ -40,6 +40,10 @@ namespace Blood_Bank_Management_System
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +84,7 @@ namespace Blood_Bank_Management_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkRed;
-            this.label12.Location = new System.Drawing.Point(629, 223);
+            this.label12.Location = new System.Drawing.Point(629, 174);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(161, 29);
             this.label12.TabIndex = 24;
@@ -91,7 +95,7 @@ namespace Blood_Bank_Management_System
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.DarkRed;
-            this.textBox2.Location = new System.Drawing.Point(634, 260);
+            this.textBox2.Location = new System.Drawing.Point(634, 206);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(233, 38);
@@ -126,9 +130,9 @@ namespace Blood_Bank_Management_System
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
             this.label10.Location = new System.Drawing.Point(312, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(224, 32);
+            this.label10.Size = new System.Drawing.Size(215, 32);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Blood Transfert";
+            this.label10.Text = "Blood Transfer";
             // 
             // label13
             // 
@@ -155,12 +159,61 @@ namespace Blood_Bank_Management_System
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(636, 259);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 29);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Volume (ml)";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "150",
+            "250",
+            "350 "});
+            this.comboBox1.Location = new System.Drawing.Point(634, 304);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 39);
+            this.comboBox1.TabIndex = 54;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(318, 395);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(256, 22);
+            this.dateTimePicker1.TabIndex = 56;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label2.Location = new System.Drawing.Point(329, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 29);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Date Transfer";
+            // 
             // BloodTransfert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(891, 606);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox1);
@@ -193,5 +246,9 @@ namespace Blood_Bank_Management_System
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
     }
 }

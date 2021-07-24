@@ -1,9 +1,9 @@
 USE [master]
 GO
-/****** Object:  Database [BloodBankDb]    Script Date: 7/28/2021 4:56:20 PM ******/
+/****** Object:  Database [BloodBankDb]    Script Date: 7/24/2021 11:34:47 PM ******/
 CREATE DATABASE [BloodBankDb]
 
-GO
+
 ALTER DATABASE [BloodBankDb] SET COMPATIBILITY_LEVEL = 150
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
@@ -75,13 +75,13 @@ ALTER DATABASE [BloodBankDb] SET QUERY_STORE = OFF
 GO
 USE [BloodBankDb]
 GO
-/****** Object:  Table [dbo].[BloodTbl]    Script Date: 6/28/2021 4:56:20 PM ******/
+/****** Object:  Table [dbo].[BloodTbl]    Script Date: 7/24/2021 11:34:47 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[BloodTbl](
-	[BGroup] [varchar](5) NOT NULL,
+	[BGroup] [char](10) NOT NULL,
 	[BStock] [int] NOT NULL,
  CONSTRAINT [PK_BloodTbl] PRIMARY KEY CLUSTERED 
 (
@@ -89,26 +89,24 @@ CREATE TABLE [dbo].[BloodTbl](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Dashboard]    Script Date: 6/28/2021 4:56:20 PM ******/
+/****** Object:  Table [dbo].[DonationTbl]    Script Date: 7/24/2021 11:34:47 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Dashboard](
-	[TotalDonor] [int] NOT NULL,
-	[TotalTransfers] [int] NOT NULL,
-	[TotalBlood] [int] NOT NULL,
-	[TypeBloodA+] [int] NOT NULL,
-	[TypeBloodA-] [int] NOT NULL,
-	[TypeBloodB+] [int] NOT NULL,
-	[TypeBloodB-] [int] NOT NULL,
-	[TypeBloodO+] [int] NOT NULL,
-	[TypeBloodO-] [int] NOT NULL,
-	[TypeBloodAB+] [int] NOT NULL,
-	[TypeBloodAB-] [int] NOT NULL
+CREATE TABLE [dbo].[DonationTbl](
+	[DonateID] [int] IDENTITY(1,1) NOT NULL,
+	[DonorID] [int] NOT NULL,
+	[VolumeBlood] [int] NOT NULL,
+	[Date] [date] NOT NULL,
+	[BGroup] [char](10) NULL,
+ CONSTRAINT [PK_DonationTbl] PRIMARY KEY CLUSTERED 
+(
+	[DonateID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DonorTbl]    Script Date: 6/28/2021 4:56:20 PM ******/
+/****** Object:  Table [dbo].[DonorTbl]    Script Date: 7/24/2021 11:34:47 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,13 +119,15 @@ CREATE TABLE [dbo].[DonorTbl](
 	[DPhone] [varchar](50) NOT NULL,
 	[DAdress] [nvarchar](50) NOT NULL,
 	[DBGroup] [varchar](5) NOT NULL,
+	[VolumeBlood] [int] NULL,
+	[Date] [date] NULL,
  CONSTRAINT [PK_DonorTbl] PRIMARY KEY CLUSTERED 
 (
-	[DNum] ASC
+	[DPhone] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LoginTbl]    Script Date: 6/28/2021 4:56:20 PM ******/
+/****** Object:  Table [dbo].[LoginTbl]    Script Date: 7/24/2021 11:34:47 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -142,7 +142,7 @@ CREATE TABLE [dbo].[LoginTbl](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PatientTbl]    Script Date: 6/28/2021 4:56:20 PM ******/
+/****** Object:  Table [dbo].[PatientTbl]    Script Date: 7/24/2021 11:34:47 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -153,40 +153,51 @@ CREATE TABLE [dbo].[PatientTbl](
 	[PAge] [int] NOT NULL,
 	[PPhone] [varchar](10) NOT NULL,
 	[PGender] [varchar](10) NOT NULL,
-	[PBGroup] [varchar](5) NOT NULL,
 	[PAdrress] [nvarchar](50) NOT NULL,
+	[PBGroup] [varchar](5) NOT NULL,
+	[PBloodNeed] [int] NOT NULL,
  CONSTRAINT [PK_PatientTbl] PRIMARY KEY CLUSTERED 
 (
 	[PNum] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'A+', 0)
+/****** Object:  Table [dbo].[Transfer_Blood]    Script Date: 7/24/2021 11:34:47 PM ******/
+SET ANSI_NULLS ON
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'A-', 1)
+SET QUOTED_IDENTIFIER ON
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'AB+', 1)
+CREATE TABLE [dbo].[Transfer_Blood](
+	[TransferID] [int] IDENTITY(1,1) NOT NULL,
+	[PatientID] [int] NULL,
+	[VolumeBloodTransfer] [int] NULL,
+	[Date] [date] NULL,
+	[BGroup] [char](10) NULL,
+ CONSTRAINT [PK_Transfer_Blood] PRIMARY KEY CLUSTERED 
+(
+	[TransferID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'AB-', 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'A+        ', 350)
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'B+', 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'A-        ', 0)
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'B-', 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'AB+       ', 0)
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'O+', 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'AB-       ', 0)
 GO
-INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'O-', 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'B+        ', 0)
 GO
-INSERT [dbo].[Dashboard] ([TotalDonor], [TotalTransfers], [TotalBlood], [TypeBloodA+], [TypeBloodA-], [TypeBloodB+], [TypeBloodB-], [TypeBloodO+], [TypeBloodO-], [TypeBloodAB+], [TypeBloodAB-]) VALUES (11, 6, 8, 3, 2, 1, 0, 0, 0, 2, 0)
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'B-        ', 0)
+GO
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'O+        ', 0)
+GO
+INSERT [dbo].[BloodTbl] ([BGroup], [BStock]) VALUES (N'O-        ', 0)
 GO
 SET IDENTITY_INSERT [dbo].[DonorTbl] ON 
 GO
-INSERT [dbo].[DonorTbl] ([DNum], [DName], [DAge], [DGender], [DPhone], [DAdress], [DBGroup]) VALUES (15, N'Nam', 21, N'Male', N'0927847182', N'Nghe An', N'O+')
-GO
-INSERT [dbo].[DonorTbl] ([DNum], [DName], [DAge], [DGender], [DPhone], [DAdress], [DBGroup]) VALUES (16, N'Trang', 18, N'Female', N'0293719591', N'Thach That', N'O-')
-GO
-INSERT [dbo].[DonorTbl] ([DNum], [DName], [DAge], [DGender], [DPhone], [DAdress], [DBGroup]) VALUES (17, N'Dat', 21, N'Male', N'0183918427', N'Ha Noi
-', N'B-')
+INSERT [dbo].[DonorTbl] ([DNum], [DName], [DAge], [DGender], [DPhone], [DAdress], [DBGroup], [VolumeBlood], [Date]) VALUES (32, N'Nam', 21, N'Male', N'0961284654', N'Nghe An', N'A+', 350, CAST(N'2021-07-24' AS Date))
 GO
 SET IDENTITY_INSERT [dbo].[DonorTbl] OFF
 GO
@@ -200,11 +211,19 @@ SET IDENTITY_INSERT [dbo].[LoginTbl] OFF
 GO
 SET IDENTITY_INSERT [dbo].[PatientTbl] ON 
 GO
-INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PBGroup], [PAdrress]) VALUES (18, N'B', 2, N'2', N'Female', N'A+', N'B')
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (1, N'Patient1', 18, N'134567', N'Male', N'Address1', N'A+', 750)
 GO
-INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PBGroup], [PAdrress]) VALUES (20, N'Linh', 24, N'0182746272', N'Male', N'A+', N'Hung Yen')
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (2, N'Patient2', 20, N'2345', N'Male', N'Ad2', N'A-', 900)
 GO
-INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PBGroup], [PAdrress]) VALUES (21, N'Tai ', 23, N'2819382910', N'Female', N'B-', N'Bac Giang')
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (3, N'Patient3', 20, N'3456789', N'Female', N'Ad3', N'B+', 1150)
+GO
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (4, N'Patient4', 38, N'23456789', N'Male', N'Ad4', N'B-', 2400)
+GO
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (5, N'Patient5', 59, N'3456789', N'Female', N'Ad5', N'O+', 1950)
+GO
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (7, N'Patient7', 70, N'9929487', N'Male', N'Ad7', N'AB+', 2850)
+GO
+INSERT [dbo].[PatientTbl] ([PNum], [PName], [PAge], [PPhone], [PGender], [PAdrress], [PBGroup], [PBloodNeed]) VALUES (8, N'Patient8', 49, N'3456789', N'Female', N'Ad8', N'AB-', 3550)
 GO
 SET IDENTITY_INSERT [dbo].[PatientTbl] OFF
 GO

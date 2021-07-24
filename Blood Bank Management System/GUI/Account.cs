@@ -21,8 +21,8 @@ namespace Blood_Bank_Management_System
 
         private void AddUser_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM LoginTbl");
-            dataGridView1.DataSource = DAO.GetDataTable(cmd);
+
+            dataGridView1.DataSource = AccountDAO.loadAccount();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -59,8 +59,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM LoginTbl WHERE ID = '" + IDTb.Text +"'");
-                    DAO.UpdateTable(cmd);
+                    AccountDAO.Delete(IDTb.Text);
                     MessageBox.Show("Delete successfully!");
                     AddUser_Load(sender, e);
                     Reset();
@@ -82,8 +81,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO LoginTbl([UserName],[Password]) VALUES('" + UserNameTb.Text + "','" + PasswordTb.Text +  "')");
-                    DAO.UpdateTable(cmd);
+                    AccountDAO.Insert(UserNameTb.Text, PasswordTb.Text);
                     MessageBox.Show("Add employees successfully!");
                     AddUser_Load(sender, e);
                     Reset();
@@ -105,8 +103,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE LoginTbl SET UserName ='" + UserNameTb.Text + "',Password ='" + PasswordTb.Text + "'WHERE ID = '" + IDTb.Text +"'" );
-                    DAO.UpdateTable(cmd);
+                    AccountDAO.Update(UserNameTb.Text, PasswordTb.Text, IDTb.Text);
                     MessageBox.Show("Update successfully!");
                     AddUser_Load(sender, e);
                     Reset();

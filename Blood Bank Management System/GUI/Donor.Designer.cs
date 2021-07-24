@@ -45,6 +45,10 @@ namespace Blood_Bank_Management_System
             this.DAddressTb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +57,11 @@ namespace Blood_Bank_Management_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(374, 5);
+            this.label10.Location = new System.Drawing.Point(340, 5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 32);
+            this.label10.Size = new System.Drawing.Size(159, 32);
             this.label10.TabIndex = 3;
-            this.label10.Text = "Donor";
+            this.label10.Text = "Add Donor";
             // 
             // DNameTb
             // 
@@ -104,7 +108,7 @@ namespace Blood_Bank_Management_System
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkRed;
-            this.label13.Location = new System.Drawing.Point(139, 264);
+            this.label13.Location = new System.Drawing.Point(27, 251);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 29);
             this.label13.TabIndex = 9;
@@ -114,7 +118,7 @@ namespace Blood_Bank_Management_System
             // 
             this.DPhoneTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPhoneTb.ForeColor = System.Drawing.Color.DarkRed;
-            this.DPhoneTb.Location = new System.Drawing.Point(144, 312);
+            this.DPhoneTb.Location = new System.Drawing.Point(23, 283);
             this.DPhoneTb.Name = "DPhoneTb";
             this.DPhoneTb.Size = new System.Drawing.Size(233, 38);
             this.DPhoneTb.TabIndex = 8;
@@ -133,7 +137,7 @@ namespace Blood_Bank_Management_System
             "O-",
             "AB+",
             "AB-"});
-            this.DBGroupCb.Location = new System.Drawing.Point(486, 311);
+            this.DBGroupCb.Location = new System.Drawing.Point(323, 283);
             this.DBGroupCb.Name = "DBGroupCb";
             this.DBGroupCb.Size = new System.Drawing.Size(233, 39);
             this.DBGroupCb.TabIndex = 10;
@@ -143,7 +147,7 @@ namespace Blood_Bank_Management_System
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkRed;
-            this.label14.Location = new System.Drawing.Point(481, 275);
+            this.label14.Location = new System.Drawing.Point(321, 251);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(161, 29);
             this.label14.TabIndex = 11;
@@ -178,7 +182,7 @@ namespace Blood_Bank_Management_System
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkRed;
-            this.label16.Location = new System.Drawing.Point(305, 379);
+            this.label16.Location = new System.Drawing.Point(139, 368);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(109, 29);
             this.label16.TabIndex = 14;
@@ -188,7 +192,7 @@ namespace Blood_Bank_Management_System
             // 
             this.DAddressTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DAddressTb.ForeColor = System.Drawing.Color.DarkRed;
-            this.DAddressTb.Location = new System.Drawing.Point(310, 415);
+            this.DAddressTb.Location = new System.Drawing.Point(75, 411);
             this.DAddressTb.Multiline = true;
             this.DAddressTb.Name = "DAddressTb";
             this.DAddressTb.Size = new System.Drawing.Size(233, 86);
@@ -217,12 +221,60 @@ namespace Blood_Bank_Management_System
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // cb
+            // 
+            this.cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb.ForeColor = System.Drawing.Color.DarkRed;
+            this.cb.FormattingEnabled = true;
+            this.cb.Items.AddRange(new object[] {
+            "150",
+            "250",
+            "350"});
+            this.cb.Location = new System.Drawing.Point(629, 283);
+            this.cb.Name = "cb";
+            this.cb.Size = new System.Drawing.Size(199, 39);
+            this.cb.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(610, 251);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(230, 29);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Volume Blood (ml)";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(501, 413);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(306, 26);
+            this.dateTimePicker1.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
+            this.label2.Location = new System.Drawing.Point(496, 368);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 29);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Time Donate";
+            // 
             // Donor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(891, 606);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cb);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DAddressTb);
@@ -264,5 +316,9 @@ namespace Blood_Bank_Management_System
         private System.Windows.Forms.TextBox DAddressTb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
     }
 }

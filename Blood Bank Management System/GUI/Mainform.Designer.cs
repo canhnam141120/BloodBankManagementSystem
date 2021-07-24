@@ -98,13 +98,13 @@ namespace Blood_Bank_Management_System
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(41, 95);
+            this.label11.Location = new System.Drawing.Point(40, 84);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 29);
+            this.label11.Size = new System.Drawing.Size(132, 50);
             this.label11.TabIndex = 15;
-            this.label11.Text = "Employees";
+            this.label11.Text = "Management \r\nAccounts";
             this.label11.Visible = false;
             // 
             // panel10
@@ -134,13 +134,13 @@ namespace Blood_Bank_Management_System
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(32, 267);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 29);
+            this.label10.Size = new System.Drawing.Size(145, 25);
             this.label10.TabIndex = 6;
-            this.label10.Text = "Donate";
+            this.label10.Text = "Donation Blood";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel9
@@ -156,13 +156,13 @@ namespace Blood_Bank_Management_System
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(32, 593);
+            this.label8.Location = new System.Drawing.Point(32, 584);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 29);
+            this.label8.Size = new System.Drawing.Size(150, 50);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Dashboard";
+            this.label8.Text = "View \r\nHistory Transfer";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel8
@@ -188,25 +188,25 @@ namespace Blood_Bank_Management_System
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(32, 531);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(179, 29);
+            this.label7.Size = new System.Drawing.Size(140, 25);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Blood Transfert";
+            this.label7.Text = "Blood Transfer";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(32, 468);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 29);
+            this.label6.Size = new System.Drawing.Size(165, 25);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Blood Stock";
+            this.label6.Text = "View Blood Stock";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel6
@@ -222,13 +222,13 @@ namespace Blood_Bank_Management_System
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(32, 398);
+            this.label5.Location = new System.Drawing.Point(32, 389);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 29);
+            this.label5.Size = new System.Drawing.Size(169, 50);
             this.label5.TabIndex = 6;
-            this.label5.Text = "View Patient";
+            this.label5.Text = "View, Edit, Delete \r\nPatient";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel5
@@ -244,13 +244,13 @@ namespace Blood_Bank_Management_System
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(32, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 29);
+            this.label4.Size = new System.Drawing.Size(156, 25);
             this.label4.TabIndex = 4;
-            this.label4.Text = "View Donor";
+            this.label4.Text = "View, Edit Donor";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel4
@@ -266,13 +266,13 @@ namespace Blood_Bank_Management_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(32, 332);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 29);
+            this.label3.Size = new System.Drawing.Size(113, 25);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Patient";
+            this.label3.Text = "Add Patient";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel3
@@ -288,13 +288,13 @@ namespace Blood_Bank_Management_System
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(40, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 29);
+            this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Donor";
+            this.label2.Text = "Add Donor";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2

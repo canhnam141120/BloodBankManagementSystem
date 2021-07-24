@@ -21,8 +21,7 @@ namespace Blood_Bank_Management_System
 
         private void ViewPatients_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM PatientTbl");
-            dataGridView1.DataSource = DAO.GetDataTable(cmd);
+            dataGridView1.DataSource = PatientDAO.loadData();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -41,10 +40,12 @@ namespace Blood_Bank_Management_System
             PPhone.Text = getPPhone;
             string getPGen = dataGridViewRow.Cells[4].Value.ToString();
             PGen.SelectedItem = getPGen;
-            string getPBGroup = dataGridViewRow.Cells[5].Value.ToString();
-            PBGroup.SelectedItem = getPBGroup;
-            string getPAdress = dataGridViewRow.Cells[6].Value.ToString();
+            string getPAdress = dataGridViewRow.Cells[5].Value.ToString();
             PAddress.Text = getPAdress;
+            string getPBGroup = dataGridViewRow.Cells[6].Value.ToString();
+            PBGroup.SelectedItem = getPBGroup;
+            string getVolume = dataGridViewRow.Cells[7].Value.ToString();
+            textBox1.Text = getVolume;
         }
 
         private void Reset()
@@ -58,6 +59,7 @@ namespace Blood_Bank_Management_System
             PNum.Text = "";
             button1.Enabled = false;
             button2.Enabled = false;
+            textBox1.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,8 +72,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM PatientTbl WHERE PNum = " + int.Parse(PNum.Text.ToString()));
-                    DAO.UpdateTable(cmd);
+                    PatientDAO.Delete(int.Parse(PNum.Text.ToString()));
                     MessageBox.Show("Delete patient number " + int.Parse(PNum.Text.ToString()) + " successfully!");
                     ViewPatients_Load(sender, e);
                     Reset();
@@ -93,9 +94,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE [dbo].[PatientTbl] SET PName ='" + PName.Text + "',PAge ='" + PAge.Text + "',PPhone='" + PPhone.Text 
-                        + "',PGender ='" + PGen.SelectedItem.ToString() + "', PBgroup = '" + PBGroup.SelectedItem.ToString() + "',PAdrress ='" + PAddress.Text + "' WHERE PNum = " + PNum.Text);
-                    DAO.UpdateTable(cmd);
+                    PatientDAO.Update(PName.Text, PAge.Text, PGen.SelectedItem.ToString(), PPhone.Text, PAddress.Text, PBGroup.SelectedItem.ToString(),textBox1.Text, PNum.Text);
                     MessageBox.Show("Update patient number " + int.Parse(PNum.Text.ToString()) + " successfully!");
                     ViewPatients_Load(sender, e);
                     Reset();

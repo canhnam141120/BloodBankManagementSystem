@@ -22,8 +22,7 @@ namespace Blood_Bank_Management_System
 
         private void BloodStock_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM BloodTbl");
-            dataGridView1.DataSource = DAO.GetDataTable(cmd);
+            dataGridView1.DataSource = BloodDAO.loadData();
         }
 
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
@@ -34,8 +33,7 @@ namespace Blood_Bank_Management_System
             }
             else
             {
-            SqlCommand cmd1 = new SqlCommand("SELECT * From BloodTbl WHERE BGroup = '" + comboBox2.SelectedItem.ToString() + "'");
-            dataGridView1.DataSource = DAO.GetDataTable(cmd1);
+                dataGridView1.DataSource = BloodDAO.searchData(comboBox2.SelectedItem.ToString());
             }
 
         }

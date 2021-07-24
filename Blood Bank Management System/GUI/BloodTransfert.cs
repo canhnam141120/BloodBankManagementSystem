@@ -17,6 +17,8 @@ namespace Blood_Bank_Management_System
         public BloodTransfert()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void BloodTransfert_Load(object sender, EventArgs e)
@@ -38,13 +40,13 @@ namespace Blood_Bank_Management_System
 
             SqlCommand cmd3 = new SqlCommand("SELECT BStock FROM BloodTbl WHERE BGroup = '" + textBox2.Text + "'");
             int BStock = int.Parse(DAO.GetData(cmd3).ToString());
-            if(BStock == 0)
+            if (BStock < int.Parse(comboBox1.SelectedItem.ToString()))
             {
                 label13.Visible = true;
                 label13.Text = "Stock not avaiable!";
                 button2.Visible = false;
             }
-            if(BStock > 0)
+            if(BStock >= int.Parse(comboBox1.SelectedItem.ToString()))
             {
                 label13.Visible = true;
                 label13.Text = "Avaiables Stock";
@@ -57,12 +59,22 @@ namespace Blood_Bank_Management_System
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("UPDATE BloodTbl SET BStock = BStock - 1 WHERE BGroup = '" + textBox2.Text + "'");
+                SqlCommand cmd = new SqlCommand("UPDATE BloodTbl SET BStock = BStock - " +comboBox1.SelectedItem+ " WHERE BGroup = '" + textBox2.Text + "'");
                 DAO.UpdateTable(cmd);
-                SqlCommand cmd1 = new SqlCommand("DELETE FROM PatientTbl WHERE PNum = " + comboBox2.SelectedValue.ToString());
-                DAO.UpdateTable(cmd1);
-                SqlCommand cmd2 = new SqlCommand("UPDATE Dashboard SET TotalTransfers = TotalTransfers + 1");
-                DAO.UpdateTable(cmd2);
+                TransferDAO.Insert(comboBox2.SelectedValue.ToString(), comboBox1.SelectedItem.ToString(),textBox2.Text);
+                int a =(int) DAO.GetData(new SqlCommand("SELECT PBloodNeed FROM PatientTbl WHERE PNum =" + comboBox2.SelectedValue));
+                if(a <= int.Parse(comboBox1.SelectedItem.ToString())){
+                    SqlCommand cmd1 = new SqlCommand("DELETE PatientTbl WHERE PNum = " + comboBox2.SelectedValue);
+                    DAO.UpdateTable(cmd1);
+                    MessageBox.Show("The patient received enough blood. Get out of the hospital!");
+                }
+                else
+                {
+                    SqlCommand cmd1 = new SqlCommand("UPDATE PatientTbl SET PBloodNeed = PBloodNeed - " + comboBox1.SelectedItem + " WHERE PNum = " + comboBox2.SelectedValue);
+                    DAO.UpdateTable(cmd1);
+                }
+                
+
                 comboBox2.SelectedIndex = -1;
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -70,12 +82,31 @@ namespace Blood_Bank_Management_System
                 MessageBox.Show("Transfert successfull!");
                 button2.Visible = false;
                 label13.Visible = false;
+                comboBox1.SelectedIndex = 0;
             }
             catch(Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
             }
             
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            SqlCommand cmd3 = new SqlCommand("SELECT BStock FROM BloodTbl WHERE BGroup = '" + textBox2.Text + "'");
+            int BStock = int.Parse(DAO.GetData(cmd3).ToString());
+            if (BStock < int.Parse(comboBox1.SelectedItem.ToString()))
+            {
+                label13.Visible = true;
+                label13.Text = "Stock not avaiable!";
+                button2.Visible = false;
+            }
+            if (BStock >= int.Parse(comboBox1.SelectedItem.ToString()))
+            {
+                label13.Visible = true;
+                label13.Text = "Avaiables Stock";
+                button2.Visible = true;
+            }
         }
     }
 }

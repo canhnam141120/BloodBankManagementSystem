@@ -54,11 +54,11 @@ namespace Blood_Bank_Management_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(344, 13);
+            this.label10.Location = new System.Drawing.Point(306, 13);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(178, 32);
+            this.label10.Size = new System.Drawing.Size(252, 32);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Blood Stock";
+            this.label10.Text = "View Blood Stock";
             // 
             // dataGridView1
             // 

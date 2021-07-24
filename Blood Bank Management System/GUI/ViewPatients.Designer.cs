@@ -48,6 +48,8 @@ namespace Blood_Bank_Management_System
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PNum = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@ namespace Blood_Bank_Management_System
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(371, 224);
+            this.button1.Location = new System.Drawing.Point(273, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 41);
             this.button1.TabIndex = 50;
@@ -195,11 +197,11 @@ namespace Blood_Bank_Management_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(330, 9);
+            this.label10.Location = new System.Drawing.Point(254, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(201, 32);
+            this.label10.Size = new System.Drawing.Size(378, 32);
             this.label10.TabIndex = 37;
-            this.label10.Text = "View Patients";
+            this.label10.Text = "View, Edit, Delete Patients";
             // 
             // PAddress
             // 
@@ -216,7 +218,7 @@ namespace Blood_Bank_Management_System
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(567, 224);
+            this.button2.Location = new System.Drawing.Point(436, 224);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 41);
             this.button2.TabIndex = 52;
@@ -254,7 +256,7 @@ namespace Blood_Bank_Management_System
             this.button3.BackColor = System.Drawing.Color.DarkRed;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(177, 224);
+            this.button3.Location = new System.Drawing.Point(117, 224);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(141, 41);
             this.button3.TabIndex = 55;
@@ -262,12 +264,34 @@ namespace Blood_Bank_Management_System
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.textBox1.Location = new System.Drawing.Point(739, 227);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(128, 38);
+            this.textBox1.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(639, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 29);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Volume";
+            // 
             // ViewPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(891, 606);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.PNum);
             this.Controls.Add(this.dataGridView1);
@@ -316,5 +340,7 @@ namespace Blood_Bank_Management_System
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox PNum;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

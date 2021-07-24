@@ -31,7 +31,7 @@ namespace Blood_Bank_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (PNameTb.Text == "" || PPhoneTb.Text == "" || PAgeTb.Text == "" || PAddressTb.Text == "" || PGenCb.SelectedIndex == -1 || PBGroupCb.SelectedIndex == -1)
+            if (PNameTb.Text == "" || PPhoneTb.Text == "" || PAgeTb.Text == "" || PAddressTb.Text == "" || PGenCb.SelectedIndex == -1 || PBGroupCb.SelectedIndex == -1|| txtNeed.Text =="")
             {
                 MessageBox.Show("Missing Information!");
             }
@@ -39,8 +39,7 @@ namespace Blood_Bank_Management_System
             {
                 try
                 {
-                    SqlCommand sql = new SqlCommand("insert into PatientTbl values('" + PNameTb.Text + "'," + PAgeTb.Text + ",'" + PPhoneTb.Text + "','" + PGenCb.SelectedItem.ToString() + "','" + PBGroupCb.SelectedItem.ToString() + "','" + PAddressTb.Text + "')");
-                    DAO.UpdateTable(sql);
+                    PatientDAO.Insert(PNameTb.Text, PAgeTb.Text, PGenCb.SelectedItem.ToString(), PPhoneTb.Text, PAddressTb.Text, PBGroupCb.SelectedItem.ToString(), txtNeed.Text);
                     MessageBox.Show("Patient Successfully Saved!");
                     Reset();
                 }

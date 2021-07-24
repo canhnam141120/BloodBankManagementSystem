@@ -45,6 +45,8 @@ namespace Blood_Bank_Management_System
             this.label11 = new System.Windows.Forms.Label();
             this.PNameTb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNeed = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@ namespace Blood_Bank_Management_System
             // 
             this.PAddressTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PAddressTb.ForeColor = System.Drawing.Color.DarkRed;
-            this.PAddressTb.Location = new System.Drawing.Point(310, 416);
+            this.PAddressTb.Location = new System.Drawing.Point(183, 416);
             this.PAddressTb.Multiline = true;
             this.PAddressTb.Name = "PAddressTb";
             this.PAddressTb.Size = new System.Drawing.Size(233, 105);
@@ -86,7 +88,7 @@ namespace Blood_Bank_Management_System
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkRed;
-            this.label16.Location = new System.Drawing.Point(305, 380);
+            this.label16.Location = new System.Drawing.Point(178, 380);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(109, 29);
             this.label16.TabIndex = 31;
@@ -213,9 +215,29 @@ namespace Blood_Bank_Management_System
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
             this.label10.Location = new System.Drawing.Point(355, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 32);
+            this.label10.Size = new System.Drawing.Size(189, 32);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Patients";
+            this.label10.Text = "Add Patients";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(492, 415);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(248, 29);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Volume Blood Need";
+            // 
+            // txtNeed
+            // 
+            this.txtNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNeed.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtNeed.Location = new System.Drawing.Point(497, 463);
+            this.txtNeed.Name = "txtNeed";
+            this.txtNeed.Size = new System.Drawing.Size(233, 38);
+            this.txtNeed.TabIndex = 35;
             // 
             // Patient
             // 
@@ -223,6 +245,8 @@ namespace Blood_Bank_Management_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(891, 606);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNeed);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PAddressTb);
@@ -241,7 +265,7 @@ namespace Blood_Bank_Management_System
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Patient";
+            this.Text = "Add Patient";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,5 +289,7 @@ namespace Blood_Bank_Management_System
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox PNameTb;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNeed;
     }
 }
